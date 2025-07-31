@@ -7,7 +7,7 @@
 - Adds `<link>` tag support with real mouse-events (enter/leave)
 - Clean integration with `URichTextBlock` via decorator
 - Easy to use in both C++ and Blueprint widgets
-- Tested with Unreal Engine 5.3, 5.4, 5.5 and 5.6
+- Tested with Unreal Engine 5.3
 
 ## Installation
 
