@@ -22,15 +22,15 @@ class RICHLINKS_API ILinkEventReceiver
 	GENERATED_BODY()
 
 public:
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Tom")
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "RichLinks")
 	void NotifyOnLinkMouseEnter(const FName& LinkId);
 	
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Tom")
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "RichLinks")
 	void NotifyOnLinkMouseLeave(const FName& LinkId);
 	
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Tom")
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "RichLinks")
 	void NotifyOnLinkMouseButtonDown(const FName& LinkId);
 
-	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Tom")
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "RichLinks")
 	void AddLinkId(const FName& LinkId);
 };
