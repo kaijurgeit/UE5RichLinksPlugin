@@ -90,6 +90,15 @@ SLATE_END_ARGS()
 		SCompoundWidget::OnMouseLeave(MouseEvent);
 	}
 
+	virtual FReply OnMouseButtonDown(const FGeometry& MyGeometry, const FPointerEvent& MouseEvent) override
+	{
+		if (OwnerWidget.IsValid() && OwnerWidget->GetClass()->ImplementsInterface(ULinkEventReceiver::StaticClass()))
+		{
+			ILinkEventReceiver::Execute_NotifyOnLinkMouseButtonDown(OwnerWidget.Get(), CardId);
+		}
+		return FReply::Handled();
+	}
+
 private:
 	TAttribute<FText> Text;
 	TWeakObjectPtr<URichTextBlock> OwnerRichTextBlock;

@@ -27,6 +27,9 @@ public:
 	
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Tom")
 	void NotifyOnLinkMouseLeave(const FName& LinkId);
+	
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Tom")
+	void NotifyOnLinkMouseButtonDown(const FName& LinkId);
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Tom")
 	void AddLinkId(const FName& LinkId);
