@@ -15,8 +15,8 @@ bool FLinkRichTextDecorator::Supports(const FTextRunParseResults& RunParseResult
 TSharedPtr<SWidget> FLinkRichTextDecorator::CreateDecoratorWidget(const FTextRunInfo& RunInfo,
 	const FTextBlockStyle& TextStyle) const
 {
-	const FName CardId(*RunInfo.MetaData.Find("id"));
+	const FName LinkId(*RunInfo.MetaData.Find("id"));
 	
-	return SNew(SLink, RunInfo.Content, RunInfo.Name, TextStyle).OwnerRichTextBlock(Owner).OwnerWidget(OwnerWidget).CardId(CardId);
+	return SNew(SLink, RunInfo.Content, RunInfo.Name, TextStyle).OwnerRichTextBlock(Owner).OwnerWidget(OwnerWidget).LinkId(LinkId);
 }
 
