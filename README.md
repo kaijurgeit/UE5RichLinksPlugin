@@ -46,6 +46,9 @@ You can respond to hover events directly from Slate or use Blueprint interfaces 
 2. Press *play-in-editor* (Alt+P)
 3. Use the mouse to hover and click the links
 
+![L_Widget_Viewport](Demo-L_Widget_Viewport.gif)
+
+
 ### W_PlainRichText
 
 1. Open `W_PlainRichText`
@@ -63,3 +66,5 @@ You can create your own interfaces that implement ILinkEventReceiver and react t
 3. Use the mouse to hover and click the links
 
 This map contains a `BP_WidgetActor` placed in the world.
+
+![L_WidgetActor_World](Demo-L_WidgetActor_World.gif)
