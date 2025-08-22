@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright (c) 2025 Kai Jurgeit – MIT License
 
 #include "RichLinksDev.h"
 #include "Modules/ModuleManager.h"
