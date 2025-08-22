@@ -18,7 +18,7 @@ public:
 	SLATE_ATTRIBUTE(FText, Text)
 	SLATE_ARGUMENT(TWeakObjectPtr<URichTextBlock>, OwnerRichTextBlock)
 	SLATE_ARGUMENT(TWeakObjectPtr<UUserWidget>, OwnerWidget)
-	SLATE_ARGUMENT(FName, LinkId)
+	SLATE_ARGUMENT(FName, CardId)
 SLATE_END_ARGS()
 
 	void Construct(const FArguments& InArgs, const FText& InText, const FString& TagName, const FTextBlockStyle& TextStyle)
@@ -31,7 +31,7 @@ SLATE_END_ARGS()
 		Text = InArgs._Text;
 		OwnerRichTextBlock = InArgs._OwnerRichTextBlock;
 		OwnerWidget = InArgs._OwnerWidget;
-		LinkId = InArgs._LinkId;
+		CardId = InArgs._CardId;
 		
 		this->SetVisibility(EVisibility::Visible);
 		const float LineHeight = FSlateApplication::Get().GetRenderer()->GetFontMeasureService()->GetMaxCharacterHeight(TextStyle.Font, 1.0f);
@@ -68,7 +68,7 @@ SLATE_END_ARGS()
 		
 		if (OwnerWidget.IsValid() && OwnerWidget->GetClass()->ImplementsInterface(ULinkEventReceiver::StaticClass()))
 		{
-			ILinkEventReceiver::Execute_AddLinkId(OwnerWidget.Get(), LinkId);
+			ILinkEventReceiver::Execute_AddLinkId(OwnerWidget.Get(), CardId);
 		}
 	}
 
@@ -76,7 +76,7 @@ SLATE_END_ARGS()
 	{
 		if (OwnerWidget.IsValid() && OwnerWidget->GetClass()->ImplementsInterface(ULinkEventReceiver::StaticClass()))
 		{
-			ILinkEventReceiver::Execute_NotifyOnLinkMouseEnter(OwnerWidget.Get(), LinkId);
+			ILinkEventReceiver::Execute_NotifyOnLinkMouseEnter(OwnerWidget.Get(), CardId);
 		}
 		SCompoundWidget::OnMouseEnter(MyGeometry, MouseEvent);
 	}
@@ -85,7 +85,7 @@ SLATE_END_ARGS()
 	{
 		if (OwnerWidget.IsValid() && OwnerWidget->GetClass()->ImplementsInterface(ULinkEventReceiver::StaticClass()))
 		{
-			ILinkEventReceiver::Execute_NotifyOnLinkMouseLeave(OwnerWidget.Get(), LinkId);
+			ILinkEventReceiver::Execute_NotifyOnLinkMouseLeave(OwnerWidget.Get(), CardId);
 		}
 		SCompoundWidget::OnMouseLeave(MouseEvent);
 	}
@@ -94,7 +94,7 @@ SLATE_END_ARGS()
 	{
 		if (OwnerWidget.IsValid() && OwnerWidget->GetClass()->ImplementsInterface(ULinkEventReceiver::StaticClass()))
 		{
-			ILinkEventReceiver::Execute_NotifyOnLinkMouseButtonDown(OwnerWidget.Get(), LinkId);
+			ILinkEventReceiver::Execute_NotifyOnLinkMouseButtonDown(OwnerWidget.Get(), CardId);
 		}
 		return FReply::Handled();
 	}
@@ -103,5 +103,5 @@ private:
 	TAttribute<FText> Text;
 	TWeakObjectPtr<URichTextBlock> OwnerRichTextBlock;
 	TWeakObjectPtr<UUserWidget> OwnerWidget;
-	FName LinkId;
+	FName CardId;
 };

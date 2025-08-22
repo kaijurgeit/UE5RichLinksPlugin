@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright (c) 2025 Kai Jurgeit – MIT License
 
 using UnrealBuildTool;
 using System.Collections.Generic;
@@ -7,6 +7,10 @@ public class RichLinksDevEditorTarget : TargetRules
 {
 	public RichLinksDevEditorTarget( TargetInfo Target) : base(Target)
 	{
+		bUseUnityBuild = false;
+		bUsePCHFiles = false;
+		bUseSharedPCHs = false;
+
 		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V4;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_3;

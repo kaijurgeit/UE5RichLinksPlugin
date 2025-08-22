@@ -1,0 +1,44 @@
+name: Feature request
+description: Suggest a new feature or enhancement for the RichLinks plugin
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a feature for **RichLinks**!  
+        Please try to be as specific as possible so we can evaluate your idea.
+
+  - type: input
+    id: ue-version
+    attributes:
+      label: Unreal Engine Version
+      placeholder: "e.g. 5.3.2"
+    validations:
+      required: true
+
+  - type: textarea
+    id: request
+    attributes:
+      label: What would you like to see?
+      description: Describe the feature you’d like to see implemented.
+      placeholder: "It would be great if RichLinks could..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Why is this feature useful?
+      description: Tell us why this would improve your workflow or solve a problem.
+      placeholder: "This feature would help me because..."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Contribution terms
+      options:
+        - label: I understand that this is a request, not a guarantee of implementation.
+          required: true

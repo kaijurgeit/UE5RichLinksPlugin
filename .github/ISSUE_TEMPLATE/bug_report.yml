@@ -1,0 +1,27 @@
+name: Bug report
+description: Report a bug with RichLinks
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: input
+    id: ue-version
+    attributes:
+      label: Unreal Engine Version
+      placeholder: "e.g. 5.3.2"
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      placeholder: Describe the bug...
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: List the steps...
+  - type: textarea
+    id: logs
+    attributes:
+      label: Any logs or screenshots?
+      placeholder: Paste logs or add screenshots if available.
+    validations:
+      required: false

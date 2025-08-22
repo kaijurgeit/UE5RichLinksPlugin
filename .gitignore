@@ -1,6 +1,7 @@
 # Custom ignore rules
 desktop.ini
 StarterContent
+cleanup.bat
 
 # Rider
 .idea/
